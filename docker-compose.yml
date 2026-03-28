@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: smart-study-planner-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: study_planner
+      POSTGRES_USER: planner_user
+      POSTGRES_PASSWORD: planner_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/migrations:/docker-entrypoint-initdb.d
+
+volumes:
+  postgres_data:
+

@@ -1,0 +1,10 @@
+.env
+.DS_Store
+node_modules/
+dist/
+coverage/
+backend/.env
+frontend/.env
+frontend/node_modules/
+frontend/dist/
+
